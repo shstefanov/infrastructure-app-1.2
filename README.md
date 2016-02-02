@@ -8,12 +8,15 @@ git init
 echo node_modules > .gitignore
 ```
 
+
 ## Installing infrastructure
+
 ```bash
 npm install infrastructure@1.2.0 --save
 ```
 
 ## Creating app entry point
+
 app.js
 ```javascript
 var infrastructure = require("infrastructure");
@@ -22,3 +25,9 @@ infrastructure({}, function(err, env){
   console.log("Application started");
 });
 ```
+
+## Creating config folder
+```bash
+mkdir -p config/structures
+```
+
