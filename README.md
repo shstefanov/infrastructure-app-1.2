@@ -7,3 +7,8 @@ npm init -y
 git init
 echo node_modules > .gitignore
 ```
+
+## Installing infrastructure
+```bash
+npm install infrastructure@1.2.0 --save
+```
