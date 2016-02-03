@@ -1,3 +1,5 @@
+# Setup base application
+
 ## Create project
 
 ```bash
@@ -168,3 +170,30 @@ $> npm test
   2 passing (65ms)
 
 ```
+
+
+
+# Adding HTTP server
+
+## Installing infrastructure-express
+```bash
+$> npm install infrastructure-express --save
+
+```
+
+
+## Creating structure config
+
+config/structures/pages.json
+```json
+{
+  "engine": "infrastructure-express/engine",
+  "path":   "pages",
+  "config": {
+    "http": {
+      "port": 3000
+    }
+  }
+}
+```
+

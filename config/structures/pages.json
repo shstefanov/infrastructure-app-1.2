@@ -1,0 +1,14 @@
+{
+  "engine": "infrastructure-express/engine",
+  "path":   "pages",
+  "config": {
+    "http": {
+      "port": 3000
+    },
+    "views":{
+      "path":        "templates",
+      "view_engine": "mustache",
+      "cache":       true
+    }
+  }
+}
