@@ -71,7 +71,9 @@ $> mkdir -p config/development/structures
 $> cp config/structures/log.json config/development/structures/
 ```
 
-Then edit config/development/structures/log.json to add more log options
+Then edit copied file to add more log options
+
+config/development/structures/log.json
 ```json
 {
   "options": {
@@ -84,7 +86,7 @@ Using new option to output something.
 var infrastructure = require("infrastructure");
 infrastructure({ mode: "development" }, function(err, env){
   if(err) console.error(err);
-  env.i.do("log.debug", "About what", "Sone value");
+  env.i.do("log.debug", "About what", "Some value"); // <<--- 
 });
 ```
 Running app will show more our new log:
