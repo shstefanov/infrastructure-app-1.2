@@ -92,7 +92,7 @@ infrastructure({ mode: "development" }, function(err, env){
 Running app will show more our new log:
 ```bash
 $> node app.js
-[sys]  [2016-02-02 22:35:54][logger]........................... options: sys
+[sys]  [2016-02-03 13:35:37][logger]........................... options: sys, debug
 [sys]  [2016-02-02 22:35:54][application started].............. 55ms, process_mode: single, application mode: development
 [debug]  [2016-02-03 12:54:06][About what]....................... Some value
 ```
