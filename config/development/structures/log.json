@@ -1,5 +1,4 @@
 {
-  "engine": "log",
   "options": {
     "sys": true,
     "debug": true

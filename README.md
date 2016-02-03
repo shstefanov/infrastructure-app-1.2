@@ -74,9 +74,7 @@ $> cp config/structures/log.json config/development/structures/
 Then edit config/development/structures/log.json to add more log options
 ```json
 {
-  "engine": "log",
   "options": {
-    "sys": true,
     "debug": true
   }
 }
@@ -95,4 +93,76 @@ $> node app.js
 [sys]  [2016-02-02 22:35:54][logger]........................... options: sys
 [sys]  [2016-02-02 22:35:54][application started].............. 55ms, process_mode: single, application mode: development
 [debug]  [2016-02-03 12:54:06][About what]....................... Sone value
+```
+
+## Write a test
+
+```bash
+$> npm install mocha --save
+$> mkdir test
+```
+
+somewhere in package.json
+```json
+{
+  "scripts": {
+    "test": "mocha --recursive --colors --sort --check-leaks --full-trace --throw-deprecation test"
+  }
+}
+
+```
+
+
+test/run.js
+```javascript
+var assert = require("assert");
+var infrastructure_test = require("infrastructure/test_env");
+
+describe("Start/stop application", function(){
+  var env;
+  it("Starts application", function(next){
+    infrastructure_test.start({ /* initial config here (mode will be always "test") */ }, function(err, _env){
+      assert.equal(err, null);
+      env = _env;
+      next();
+    });
+  });
+
+  it("Stops application", function(next){
+    env.stop(function(err){
+      assert.equal(err, null);
+      next();
+    });
+  });
+
+});
+```
+
+Turn off logger in test mode
+
+config/test/structures/log.json
+```json
+{
+  "options": {
+    "sys": false
+  }
+}
+```
+
+Run the test
+```bash
+$> npm test
+
+> infrastructure-app@1.0.0 test /home/stefan/projects/infrastructure-app
+> mocha --recursive --colors --sort --check-leaks --full-trace --throw-deprecation test
+
+
+
+  Start/stop application
+    ✓ Starts application (52ms)
+    ✓ Stops application
+
+
+  2 passing (65ms)
+
 ```

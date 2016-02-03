@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --recursive --colors --sort --check-leaks --full-trace --throw-deprecation test"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "infrastructure": "^1.2.0"
+    "infrastructure": "^1.2.0",
+    "mocha": "^2.4.5"
   }
 }
