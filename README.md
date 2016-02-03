@@ -94,7 +94,7 @@ Running app will show more our new log:
 $> node app.js
 [sys]  [2016-02-02 22:35:54][logger]........................... options: sys
 [sys]  [2016-02-02 22:35:54][application started].............. 55ms, process_mode: single, application mode: development
-[debug]  [2016-02-03 12:54:06][About what]....................... Sone value
+[debug]  [2016-02-03 12:54:06][About what]....................... Some value
 ```
 
 ## Write a test
@@ -108,7 +108,7 @@ somewhere in package.json
 ```json
 {
   "scripts": {
-    "test": "mocha --recursive --colors --sort --check-leaks --full-trace --throw-deprecation test"
+    "test": "mocha --recursive --colors --sort --check-leaks --no-exit --full-trace --throw-deprecation test"
   }
 }
 

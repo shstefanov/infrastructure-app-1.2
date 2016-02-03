@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive --colors --sort --check-leaks --full-trace --throw-deprecation test"
+    "test": "mocha --recursive --colors --sort --check-leaks --no-exit --full-trace --throw-deprecation test"
   },
   "keywords": [],
   "author": "",
