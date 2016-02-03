@@ -35,6 +35,7 @@ mkdir -p config/structures
 
 ## Turn on the logger
 The logger is structure worker, it's configuration is mounted here:
+
 config/structures/log.json
 ```json
 {
