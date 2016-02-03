@@ -156,7 +156,7 @@ Run the test
 $> npm test
 
 > infrastructure-app@1.0.0 test /home/stefan/projects/infrastructure-app
-> mocha --recursive --colors --sort --check-leaks --full-trace --throw-deprecation test
+> mocha --recursive --colors --sort --check-leaks --no-exit --full-trace --throw-deprecation test
 
 
 
